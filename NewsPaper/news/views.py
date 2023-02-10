@@ -1,10 +1,13 @@
 from datetime import datetime
 
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render
+from django.template.context_processors import request
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView, TemplateView
 
 from .forms import PostForm
-from .models import Post
+from .models import Post, Category
 from .filters import PostFilter
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 
@@ -92,3 +95,11 @@ class IndexView(LoginRequiredMixin, TemplateView):
         context = super().get_context_data(**kwargs)
         context['is_not_premium'] = not self.request.user.groups.filter(name='premium').exists()
         return context
+@login_required
+def subscribe(request, pk):
+    user = request.user
+    category = Category.objects.get(id=pk)
+    category.subscribers.add(user)
+
+    message = 'Вы успешно подписались на категорию'
+    return render(request, 'subscribe.html', {'category': category, 'message': message})

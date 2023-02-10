@@ -4,20 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f9448ec-ca33-4059-9d7a-71243b248e02" name="Changes" comment="Module_7.7_news">
-      <change afterPath="$PROJECT_DIR$/NewsPaper/protect/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NewsPaper/sign/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NewsPaper/sign/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NewsPaper/templates/account/base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NewsPaper/templates/main.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NewsPaper/templates/protect/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NewsPaper/templates/sign/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NewsPaper/templates/sign/logout.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NewsPaper/templates/sign/signup.html" afterDir="false" />
+    <list default="true" id="7f9448ec-ca33-4059-9d7a-71243b248e02" name="Changes" comment="Module_8.6_news">
+      <change afterPath="$PROJECT_DIR$/NewsPaper/news/management/commands/runapscheduler.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPaper/news/signals.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPaper/templates/post_week.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPaper/templates/subscribe.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NewsPaper/NewsPaper/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/NewsPaper/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewsPaper/NewsPaper/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/NewsPaper/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NewsPaper/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPaper/news/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/news/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPaper/news/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/news/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NewsPaper/news/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/news/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -28,8 +25,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -103,7 +100,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674774723461</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Module_8.6_news">
+      <created>1675465532011</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1675465532011</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -120,7 +124,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Module_6.6_news" />
     <MESSAGE value="Module_7.7_news" />
-    <option name="LAST_COMMIT_MESSAGE" value="Module_7.7_news" />
+    <MESSAGE value="Module_8.6_news" />
+    <option name="LAST_COMMIT_MESSAGE" value="Module_8.6_news" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
