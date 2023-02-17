@@ -4,24 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f9448ec-ca33-4059-9d7a-71243b248e02" name="Changes" comment="Module_9_news">
-      <change afterPath="$PROJECT_DIR$/NewsPaper/templates/category_list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NewsPaper/templates/post_created_email.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/pythonProject14.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pythonProject14.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewsPaper/NewsPaper/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/NewsPaper/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewsPaper/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewsPaper/news/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/news/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewsPaper/news/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/news/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewsPaper/news/signals.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/news/signals.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewsPaper/news/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/news/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewsPaper/news/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/news/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewsPaper/templates/post.html" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/templates/post.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewsPaper/templates/post_week.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewsPaper/templates/posts.html" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/templates/posts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewsPaper/templates/subscribe.html" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/templates/subscribe.html" afterDir="false" />
-    </list>
+    <list default="true" id="7f9448ec-ca33-4059-9d7a-71243b248e02" name="Changes" comment="Module_9news" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -119,7 +102,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676058753433</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Module_9news">
+      <created>1676668309285</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1676668309285</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -138,7 +128,8 @@
     <MESSAGE value="Module_7.7_news" />
     <MESSAGE value="Module_8.6_news" />
     <MESSAGE value="Module_9_news" />
-    <option name="LAST_COMMIT_MESSAGE" value="Module_9_news" />
+    <MESSAGE value="Module_9news" />
+    <option name="LAST_COMMIT_MESSAGE" value="Module_9news" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
