@@ -1,4 +1,4 @@
-{% extends 'flatpages/default.html' %}
+% extends 'flatpages/default.html' %}
 
 {% load custom_filters %}
 
@@ -9,9 +9,13 @@ Posts
 {% endblock title %}
 
 {% block content %}
-    <h1>Все Новости</h1>
-    <h1>Date: {% current_date %} </h1>
-    <h1>Number of posts: {{ posts|length }}</h1>
+<h1>Все Новости</h1>
+<h1>Date: {% current_date %} </h1>
+<h1>Number of posts: {{ posts|length }}</h1>
+
+    {% if is_not_subscriber %}
+        <p class="text-center"><a href="{% 'subscribe' category.id %}" class="btn btn-secondary">Подписаться</a> </p>>
+    {% endif %}
 
 {# Добавляем форму, которая объединяет набор полей, которые будут отправляться в запросе #}
    <form action="" method="get">
@@ -29,7 +33,6 @@ Posts
                <td>Дата публикации</td>
                <td>Текст</td>
                <td>Автор</td>
-               <td>Категория</td>
            </tr>
            {% for post in posts %}
            <tr>
@@ -37,9 +40,13 @@ Posts
                <td>{{ post.data|date:'d M Y' }}</td>
                <td>{{ post.text|truncatechars:20|censor }}</td>
                <td>{{ post.author.user }}</td>
-               <td>{% for category in post.category.all %}
+               <td>{{ post.category.name}}</td>
+               {% for category in post.category.all %}
                 <a href="{% url 'category_list' category.id %}">{{ category }}</a>
-               {% endfor %}</td>
+               {% endfor %}
+
+
+
 
            </tr>
            {% endfor %}
@@ -71,12 +78,3 @@ Posts
 
 
 {% endblock content %}
-
-
-
-
-
-
-
-
-

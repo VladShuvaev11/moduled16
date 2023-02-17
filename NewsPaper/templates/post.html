@@ -11,15 +11,21 @@ Post
    {% if post %}
        <table>
            <tr>
+               <td>Заголовок</td>
                <td>Дата публикации</td>
                <td>Текст</td>
                <td>Автор</td>
+               <td>Категория</td>
 
            </tr>
            <tr>
+               <td>{{ post.title|truncatechars:20 }}</td>
                <td>{{ post.data|date:'d M Y' }}</td>
                <td>{{ post.text|censor }}</td>
                <td>{{ post.author.user }}</td>
+               <td>{% for category in post.category.all %}
+                <a href="{% url 'category_list' category.id %}">{{ category }}</a>
+               {% endfor %}</td>
            </tr>
        </table>
    {% else %}

@@ -1,8 +1,8 @@
 from datetime import datetime
 
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render
-from django.template.context_processors import request
+from django.contrib.auth.models import Group
+from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView, TemplateView
 
@@ -96,10 +96,34 @@ class IndexView(LoginRequiredMixin, TemplateView):
         context['is_not_premium'] = not self.request.user.groups.filter(name='premium').exists()
         return context
 @login_required
+def upgrade_me(request):
+    user = request.user
+    premium_group = Group.objects.get(name='authors')
+    if not request.user.groups.filter(name='authors').exists():
+        premium_group.user_set.add(user)
+    return redirect('/news/')
+
+
+class CategoryListView(ListView):
+    model = Post
+    template_name = 'category_list.html'
+    context_object_name = 'category_news_list'
+
+    def get_queryset(self):
+        self.category = get_object_or_404(Category, id=self.kwargs)
+        queryset = Post.objects.filter(category = self.category).order_by('-date')
+        return queryset
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['is_not_subscriber'] = self.request.user not in self.category.subscribers.all()
+        context['category'] = self.category
+        return context
+@login_required
 def subscribe(request, pk):
     user = request.user
     category = Category.objects.get(id=pk)
     category.subscribers.add(user)
 
-    message = 'Вы успешно подписались на категорию'
-    return render(request, 'subscribe.html', {'category': category, 'message': message})
+    message = 'Вы успешно подписались на рассылку новостей'
+    return render(request, 'news/subscribe.html', {'category':category, 'message':message})
