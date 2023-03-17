@@ -177,3 +177,10 @@ EMAIL_USE_SSL = True
 
 
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+
+CELERY_BROKER_URL = 'redis://:pC5zxugCpq0ryIkE5bmEorbNjynUfESv@redis-16965.c299.asia-northeast1-1.gce.cloud.redislabs.com:16965'
+CELERY_RESULT_BACKEND = 'redis://:pC5zxugCpq0ryIkE5bmEorbNjynUfESv@redis-16965.c299.asia-northeast1-1.gce.cloud.redislabs.com:16965'
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'

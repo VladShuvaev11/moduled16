@@ -10,6 +10,11 @@ from .forms import PostForm
 from .models import Post, Category
 from .filters import PostFilter
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
+from django.shortcuts import redirect
+from django.views.generic import TemplateView, CreateView
+from .tasks import complete_order
+
+from datetime import datetime
 
 
 class PostsList(ListView):
