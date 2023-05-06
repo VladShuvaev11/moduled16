@@ -184,3 +184,95 @@ CELERY_RESULT_BACKEND = 'redis://:pC5zxugCpq0ryIkE5bmEorbNjynUfESv@redis-16965.c
 CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
+
+LOGGING = {
+    'version':1,
+    'disable_existing_loggers': False,
+    'style' : '{',
+    'formatters': {
+        'simple': {
+            'format': {'asctime}  {levelname} {message}'
+        },
+        'general': {
+            'format':'{asctime} {levelname} {module} {message}',
+            'style': '{',
+        },
+        'error': {
+            'format': '{asctime} {levelname} {message} {pathname} {exc_info}',
+            'style': '{',
+        },
+        'security':{
+            'format': '{asctime} {levelname} {message} {pathname}',
+            'style':'{',
+        }
+    },
+    'filters': {
+        'require_debug_true': {
+            '()': 'django.utils.log.RequireDebugTrue',
+        },
+        'require_debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse',
+        },
+    },
+
+    'handlers': {
+        'console': {
+            'level': 'DEBUG',
+            'filters': ['require_debug_true'],
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple',
+        },
+        'mail_admins': {
+            'level': 'ERROR',
+            'class': 'django.utils.log.AdminEmailHandler',
+            'filters': ['require_debug_false'],
+        },
+        'general': {
+            'class': 'logging.FileHandler',
+            'filename': 'NewsPaper/logs/general.log',
+            'filters': ['require_debug_false'],
+            'level': 'INFO',
+            'formatter': 'general',
+        },
+        'errors': {
+            'class': 'logging.FileHandler',
+            'filename': 'NewsPaper/logs/errors.log',
+            'level': 'ERROR',
+            'formatter': 'error'
+        },
+        'security': {
+            'class': 'logging.FileHandler',
+            'filename': 'NewsPaper/logs/security.log',
+            'formatter': 'security'
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console', 'general'],
+            'propagate': True,
+        },
+        'django.request': {
+            'handlers': ['mail_admins', 'errors'],
+            'propagate': True,
+        },
+        'django.server': {
+            'handlers': ['errors'],
+            'propagate': True,
+        },
+        'django.template': {
+            'handlers': ['errors'],
+            'propagate': True,
+        },
+        'django.db.backends': {
+            'handlers': ['errors'],
+            'propagate': True,
+        },
+        'django.security': {
+            'handlers': ['secure'],
+            'propagate': True,
+        },
+    },
+}
+
+
+
